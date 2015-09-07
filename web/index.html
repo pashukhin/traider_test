@@ -12,23 +12,41 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style type="text/css">
+            body {
+                padding-top: 70px;
+            }
+        </style>
     </head>
     <body>
-        <div class="container screen" id="mainScreen">
-            <div class="row">
-                <div class="col-xs-12 col-md-8">
-                    <h2>Traider</h2>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <button class="btn btn-default pull-right" id="addPairButton">Add</button>
+        <nav class="navbar navbar-default navbar-fixed-top" id="mainScreenNavbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="btn btn-default pull-right navbar-toggle" id="addPairButton">Add</button>
+                    <a class="navbar-brand" href="#">Traider</a>
                 </div>
             </div>
+        </nav>
+        <nav class="navbar navbar-default navbar-fixed-top" id="addPairScreenNavbar" style="display: none">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="btn btn-default pull-right navbar-toggle" id="toMainScreenButton">&lt;&lt; Back</button>
+                    <a class="navbar-brand" href="#">Add pair</a>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-default navbar-fixed-top" id="currenciesScreenNavbar" style="display: none">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="btn btn-default pull-right navbar-toggle" id="toAddPairScreenButton">&lt;&lt; Back</button>
+                    <a class="navbar-brand" href="#">Currencies</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container screen" id="mainScreen">
             <div id="pairsContainer"></div>
         </div>
         <div class="container screen" id="addPairScreen" style="display: none;">
-            <div class="row">
-                <button class="btn btn-default pull-left" id="toMainScreenButton">&lt;&lt; Back</button>
-            </div>
             <div class="row">
                 <button class="btn btn-default" id="currencyFromButton">From</button>
                 =&gt;

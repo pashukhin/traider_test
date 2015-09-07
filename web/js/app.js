@@ -77,6 +77,8 @@
     }
 
     function showScreen(id) {
+        $('.navbar').hide();
+        $('#' + id + 'Navbar').show();
         $('.screen').hide();
         $('#' + id).show();
     }
@@ -106,7 +108,7 @@
         );
     }
 
-    function updateCurenciesButtons(button) {
+    function updateCurrenciesButtons(button) {
         $('.currency-button')
             .off('change')
             .change(
@@ -128,7 +130,7 @@
     }
 
     function setupAndGoToCurrenciesScreen() {
-        updateCurenciesButtons($(this));
+        updateCurrenciesButtons($(this));
         showScreen('currenciesScreen');
     }
 
@@ -139,18 +141,17 @@
     function initButtons() {
         $('#addPairButton').click(goToScreenFactory('addPairScreen'));
         $('#toMainScreenButton').click(goToScreenFactory('mainScreen'));
+        $('#toAddPairScreenButton').click(goToScreenFactory('addPairScreen'));
         $('#currencyFromButton').click(setupAndGoToCurrenciesScreen);
         $('#currencyToButton').click(setupAndGoToCurrenciesScreen);
         $('#savePairButton').click(savePair);
         $('#searchCurrencyInput').keyup(filterCurrencies);
     }
 
-    function init() {
+    $(document).ready(function () {
         initButtons();
         loadPairs();
         loadCurrencies();
-    }
-
-    $(document).ready(init);
+    });
 })();
 
